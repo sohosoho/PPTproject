@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>펫 등록 화면</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* 등록하기 버튼 클릭 시 처리 이벤트 */
+		$("#petInsertBtn").click(function(){
+			$("#insertForm").attr({
+				"method":"POST",
+				"action":"/mypage/petInsert.do"
+			$("#insertForm").submit();
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="contentContainer">
+		<div class="contentTB">
+			<form id="insertForm" name="insertForm">
+				<table id="petinsert">
+					<colgroup>
+						<col width="17%" />
+						<col width="83%" />
+					</colgroup>
+					<tr>
+						<td>펫번호</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>견종</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>특이사항</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>성별</td>
+						<td><input type="checkbox" value="수컷">수컷<input type="checkbox" value="암컷">암컷</td>
+					</tr>
+					<tr>
+						<td>체중</td>
+						<td><input type="checkbox" value=소형><input type="checkbox" value="중형"><input type="checkbox" value="대형"></td>
+					</tr>
+					<tr>
+						<td>강아지사진</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>회원 아이디</td>
+						<td><input type="text"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		<!-- 등록하기, 취소 버튼 구현 시작 -->
+		<div class="contentBtn">
+			<input type="button" value="저장" class="but" id="petInsertBtn">
+			<input type="button" value="취소" class="but" id="petListBtn">
+		</div>
+		<!-- 등록하기, 취소 버튼 구현 종료 -->
+		
+	</div>
+</body>
+</html>

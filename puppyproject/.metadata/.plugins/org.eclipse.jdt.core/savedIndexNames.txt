@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\spring\puppyproject\.metadata\.plugins\org.eclipse.jdt.core
+4260701046.index
+3312741568.index
+1316402369.index

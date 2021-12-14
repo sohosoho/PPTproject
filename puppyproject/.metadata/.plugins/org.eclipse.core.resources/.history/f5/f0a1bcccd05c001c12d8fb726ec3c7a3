@@ -1,0 +1,5 @@
+package com.puppy.client.mypage.dao;
+
+public interface MypageDAO {
+
+}

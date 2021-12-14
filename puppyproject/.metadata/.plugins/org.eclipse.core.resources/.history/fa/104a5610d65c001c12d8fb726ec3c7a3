@@ -1,0 +1,11 @@
+package com.puppy.client.mypage.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class mycontroller {
+
+	public String list() {
+		return "clientmypagePetinfoupdate;
+	}
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3/0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.puppy.client.mypage.dao.MypageDAO">
+
+<!-- 펫리스트 조회 -->
+<select id="petList" resultType="pet">
+	select p_no, p_name, p_dogbreed, p_unique, p_gender, p_weight, p_picture, m_id
+	from Pet_tbl
+	order by p_no desc
+</select>
+</mapper>
