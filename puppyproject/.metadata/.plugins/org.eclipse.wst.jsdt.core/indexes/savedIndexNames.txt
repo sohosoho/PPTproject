@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\SpringProject\puppyproject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3090092397.index
-3517928914.index
-3049516306.index
-4260701046.index
-3905464145.index
-890987672.index
