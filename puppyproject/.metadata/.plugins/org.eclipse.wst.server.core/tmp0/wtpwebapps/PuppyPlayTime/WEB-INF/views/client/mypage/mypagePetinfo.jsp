@@ -13,13 +13,18 @@
 		/* 등록 버튼 클릭 시 처리 이벤트 */
 		$("#insertFormBtn").click(function(){
 			location.href="/mypage/insertForm.do";
-		});
-	});
+		});	
+	});	
 </script>
 </head>
 <body>
 	<div class="contentContainer">
-		<div class="contentTit"><h3>펫 리스트</h3></div>
+		<div class="contentTit"><h3>마이펫 정보</h3></div>
+	
+	<!-- 상세 페이지 이동을 위한 FORM -->
+	<form name="detailForm" id="detailForm">
+		<input type="hidden" name="p_no" id="p_no">
+	</form>
 		<!-- 펫 등록 버튼 출력시작 -->
 		<div class="contentBtn">
 			<input type="button" value="등록" id="insertFormBtn">
@@ -30,40 +35,30 @@
 		<!-- 펫 수정 버튼 출력종료 -->
 	
 		<!-- 펫 삭제 버튼 출력시작 -->		
-			<input type="button" value="삭제" id="deleteFormBtn">
+			<input type="button" value="삭제" id="deleteFormBtn" onclick="deleteValue();">
 		</div>
 		<!-- 펫 삭제 버튼 출력종료 -->
 		
 		<!-- 펫리스트 시작 -->
-		<div id="petList">
-		<table summary="펫 리스트">
-			<colgroup>
-				<col width="10%" />
-				<col width="10%" />
-				<col width="10%" />
-				<col width="10%" />
-				<col width="10%" />
-				<col width="10%" />
-				<col width="20%" />
-				<col width="20%" />
-			</colgroup>	
+		<div id="petList">		
+		<table border="1">
 			<thead>
 				<tr>
-					<th>펫번호</th>
+					<th>no</th>
+					<th>강아지사진</th>
 					<th>이름</th>
 					<th>견종</th>
-					<th>특이사항</th>
 					<th>성별</th>
 					<th>체중</th>
-					<th>강아지사진</th>
-					<th>회원아이디</th>
+					<th>특이사항</th>
 				</tr>
 			</thead>
 			<tbody id="list">
+			<!-- 데이터 출력 -->
 			<c:choose>
 				<c:when test="${not empty petList}">
 					<c:forEach var="pet" items="${petList}" varStatus="status">
-					<tr class="tac" data-no="${pet.p_no}">
+					<tr>
 					<td>${pet.p_no}</td>
 					<td>${pet.p_name}</td>
 					<td>${pet.p_dogbreed}</td>
@@ -71,7 +66,6 @@
 					<td>${pet.p_gender}</td>
 					<td>${pet.p_weight}</td>
 					<td>${pet.p_picture}</td>
-					<td>${pet.m_id}</td>
 					</tr>
 					</c:forEach>
 				</c:when>
@@ -85,6 +79,7 @@
 		</table>
 		</div>
 		<!-- 펫리스트 종료 -->
+		</form>
 	</div>
 </body>
 </html>

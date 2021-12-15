@@ -25,5 +25,23 @@ public class MypageDAOImpl implements MypageDAO{
 	public int petInsert(PetVO pvo) {
 		return session.insert("petInsert",pvo);
 	}
+	
+	//펫상세 구현
+	@Override
+	public PetVO petDetail(PetVO pvo) {
+		return (PetVO)session.selectOne("boardDetail",pvo);
+	}
+
+	//펫수정 구현
+	@Override
+	public int petUpdate(PetVO pvo) {
+		return session.update("petUpdate",pvo);
+	}
+	
+	//펫삭제 구현
+	@Override
+	public int petDelete(int p_no) {
+		return session.delete("petDelete", p_no);
+	}
 
 }

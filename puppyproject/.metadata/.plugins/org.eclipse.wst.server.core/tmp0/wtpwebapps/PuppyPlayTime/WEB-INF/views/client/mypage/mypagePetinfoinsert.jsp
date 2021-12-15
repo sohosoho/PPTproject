@@ -8,30 +8,24 @@
 <meta charset="UTF-8">
 <title>펫 등록 화면</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/resources/include/js/common.js"></script>
 <script type="text/javascript">
 	$(function(){
 		/* 등록하기 버튼 클릭 시 처리 이벤트 */
 		$("#petInsertBtn").click(function(){
-			//입력값 체크
-			alert("등록하기버튼클릭");
-	if(!chkSubmit($'#p_no'),"펫번호를")) return;
-		else if(!chkSubmit($('#p_name'),"이름을")) return;
-		else if(!chkSubmit($('#p_dogbreed'),"견종을")) return;
-		else if(!chkSubmit($('#p_unique'),"특이사항을")) return;
-		else if(!chkSubmit($('#p_gender'),"성별을")) return;
-		else if(!chkSubmit($('#p_weight'),"체중을")) return;
-		else if(!chkSubmit($('#p_picture'),"강아지사진을")) return;
-		else if(!chkSubmit($('#m_id'),"회원아이디를")) return;
-		else{
-			$("#mypagePetinfoinsert").attr({
+			$("#insertForm").attr({
 				"method":"POST",
 				"action":"/mypage/petInsert.do"
 			});
-			$("#mypagePetinfoinsert").submit();
-		}	
-			
+			$("#insertForm").submit();
 		});
-	});
+			
+ 	/* 취소 버튼 클릭 시 처리 이벤트 */
+	$("#petListBtn").click(function(){
+		location.href="/mypage/petList.do";
+	
+	}); 
+});
 </script>
 </head>
 <body>
@@ -44,8 +38,12 @@
 						<col width="83%" />
 					</colgroup>
 					<tr>
-						<td>펫번호</td>
+						<td>no</td>
 						<td><input type="text" name="p_no" id="p_no"></td>
+					</tr>
+					<tr>
+						<td>강아지사진</td>
+						<td><input type="text" name="p_picture" id="p_picture"></td>
 					</tr>
 					<tr>
 						<td>이름</td>
@@ -56,10 +54,6 @@
 						<td><input type="text" name="p_dogbreed" id="p_dogbreed"></td>
 					</tr>
 					<tr>
-						<td>특이사항</td>
-						<td><input type="text" name="p_unique" id="p_unique"></td>
-					</tr>
-					<tr>
 						<td>성별</td>
 						<td><input type="text" name="p_gender" id="p_gender"></td>
 					</tr>
@@ -68,12 +62,8 @@
 						<td><input type="text" name="p_weight" id="p_weight"></td>
 					</tr>
 					<tr>
-						<td>강아지사진</td>
-						<td><input type="text" name="p_picture" id="p_picture"></td>
-					</tr>
-					<tr>
-						<td>회원 아이디</td>
-						<td><input type="text" name="m_id" id="m_id"></td>
+						<td>특이사항</td>
+						<td><input type="text" name="p_unique" id="p_unique"></td>
 					</tr>
 				</table>
 			</form>

@@ -1,0 +1,10 @@
+package com.puppy.client.mypage.dao;
+
+import java.util.List;
+
+import com.puppy.client.common.vo.PetVO;
+
+public interface MypageDAO {
+	public List<PetVO> petList();
+	public int petInsert(PetVO pvo);
+}

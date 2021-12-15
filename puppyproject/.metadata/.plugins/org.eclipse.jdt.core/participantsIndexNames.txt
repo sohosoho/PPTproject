@@ -1,7 +1,5 @@
 INDEX VERSION 1.131
-C:\spring\puppyproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\152420493.index
+C:\SpringProject\puppyproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\152420493.index
 \PuppyPlayTime\src\main\java
-C:\spring\puppyproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\582892469.index
-\PuppyPlayTime\src\main\java
-C:\spring\puppyproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3049516306.index
+C:\SpringProject\puppyproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3049516306.index
 \PuppyPlayTime\src\main\java

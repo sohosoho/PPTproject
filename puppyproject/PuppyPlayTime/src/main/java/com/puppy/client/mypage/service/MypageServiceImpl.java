@@ -37,4 +37,38 @@ public class MypageServiceImpl implements MypageService{
 		return result;
 	}
 
+	//펫 상세 구현
+	@Override
+	public PetVO petDetail(PetVO pvo) {
+		PetVO detail=null;
+		detail=mypageDAO.petDetail(pvo);
+		return detail;
+	}
+
+	//펫 수정 구현
+	@Override
+	public int petUpdate(PetVO pvo) {
+		int result=0;
+		try {
+			result=mypageDAO.petUpdate(pvo);
+		}catch(Exception e) {
+			e.printStackTrace();
+			result=0;
+		}
+		return result;
+	}
+
+	//펫 삭제 구현
+	@Override
+	public int petDelete(int p_no) {
+		int result=0;
+		try {
+			result=mypageDAO.petDelete(p_no);
+		}catch(Exception e) {
+			e.printStackTrace();
+			result=0;
+		}
+		return result;
+	}
+
 }
